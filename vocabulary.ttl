@@ -2,38 +2,25 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vocab: <http://purl.org/m4m21/subjects/> .
+@prefix vocab: <http://purl.org/m4m21/variables/> .
 
-<http://purl.org/m4m21/subjects> a skos:ConceptScheme;
+<http://purl.org/m4m21/variables> a skos:ConceptScheme;
   dct:created "enter date of creation in the form bellow"@en;
   dct:description "Vocabulary description"@en;
   dct:hasVersion "0.1.1"@en;
-  dct:modified "2022-06-05T08:18:49+00:00"@en;
+  dct:modified "2022-06-05T08:36:30+00:00"@en;
   dct:rights <https://spdx.org/licenses/CC0-1.0>;
   dct:title "Vocabulary title"@en;
-  skos:hasTopConcept vocab:1000, vocab:1002;
+  skos:hasTopConcept vocab:1000;
   foaf:homepage "URL to the community developing vocab"@en .
 
 vocab:1000 a skos:Concept;
-  skos:altLabel "Test Subject Alternative Label"@en;
-  skos:definition "Test Subject Definition"@en;
-  skos:inScheme <http://purl.org/m4m21/subjects>;
+  skos:inScheme <http://purl.org/m4m21/variables>;
   skos:narrower vocab:1001;
-  skos:prefLabel "Test Top Subject"@en;
-  skos:topConceptOf <http://purl.org/m4m21/subjects> .
+  skos:prefLabel "new top variable"@en;
+  skos:topConceptOf <http://purl.org/m4m21/variables> .
 
 vocab:1001 a skos:Concept;
   skos:broader vocab:1000;
-  skos:inScheme <http://purl.org/m4m21/subjects>;
-  skos:prefLabel "Test Narrow Subject"@en .
-
-vocab:1002 a skos:Concept;
-  skos:inScheme <http://purl.org/m4m21/subjects>;
-  skos:narrower vocab:1003;
-  skos:prefLabel "Test Top Subject 2"@en;
-  skos:topConceptOf <http://purl.org/m4m21/subjects> .
-
-vocab:1003 a skos:Concept;
-  skos:broader vocab:1002;
-  skos:inScheme <http://purl.org/m4m21/subjects>;
-  skos:prefLabel "Test Narrow Subject 2"@en .
+  skos:inScheme <http://purl.org/m4m21/variables>;
+  skos:prefLabel "new narrow variable"@en .
