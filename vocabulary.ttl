@@ -1,5 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix puv: <https://w3id.org/env/puv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vocab: <http://purl.org/m4m21/variables/> .
@@ -82,19 +83,72 @@ sosa:madeBySensor
   dct:created "2022-06-01T00:00:00+00:00"^^xsd:datetime;
   dct:description "Vocabulary description"@en;
   dct:hasVersion "0.1.0";
-  dct:modified "2022-06-11T18:35:01+00:00"^^xsd:datetime;
+  dct:modified "2022-06-23T15:16:00+00:00"^^xsd:datetime;
   dct:rights <https://spdx.org/licenses/CC0-1.0>;
   dct:title "Vocabulary title"@en;
-  skos:hasTopConcept vocab:1000;
+  skos:hasTopConcept vocab:1000, vocab:1005, vocab:1006;
   foaf:homepage "URL to the community developing vocab"@en .
 
 vocab:1000 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0003-2195-3997"@en;
+  dct:modified "2022-06-23"^^xsd:date;
   skos:inScheme <http://purl.org/m4m21/variables>;
-  skos:narrower vocab:1001;
-  skos:prefLabel "new top variable"@en;
+  skos:narrower vocab:1001, vocab:1002, vocab:1003, vocab:1004;
+  skos:prefLabel "performance of feature"@en;
   skos:topConceptOf <http://purl.org/m4m21/variables> .
 
 vocab:1001 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0003-2195-3997"@en;
+  dct:modified "2022-06-23"^^xsd:date;
   skos:broader vocab:1000;
   skos:inScheme <http://purl.org/m4m21/variables>;
-  skos:prefLabel "new narrow variable"@en .
+  skos:prefLabel "pre-surprise performance of key feature"@en .
+
+vocab:1002 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0003-2195-3997"@en;
+  dct:modified "2022-06-23"^^xsd:date;
+  skos:broader vocab:1000;
+  skos:inScheme <http://purl.org/m4m21/variables>;
+  skos:prefLabel "surprise performance of surprise feature"@en .
+
+vocab:1003 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0003-2195-3997"@en;
+  dct:modified "2022-06-23"^^xsd:date;
+  skos:broader vocab:1000;
+  skos:inScheme <http://purl.org/m4m21/variables>;
+  skos:prefLabel "post-surprise performance of key feature"@en .
+
+vocab:1004 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0003-2195-3997"@en;
+  dct:modified "2022-06-23"^^xsd:date;
+  skos:broader vocab:1000;
+  skos:inScheme <http://purl.org/m4m21/variables>;
+  skos:prefLabel "post-surprise performance of surprise feature"@en .
+
+vocab:1005 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0001-6361-2571"@en;
+  dct:modified "2022-06-23"^^xsd:date;
+  dct:source <https://www.sciencedirect.com/topics/engineering/power-spectrum>;
+  skos:definition "Spectral power of the signal measured from the data."@en;
+  skos:inScheme <http://purl.org/m4m21/variables>;
+  skos:prefLabel "spectral power"@en;
+  skos:topConceptOf <http://purl.org/m4m21/variables>;
+  puv:statistic <http://purl.bioontology.org/ontology/SNOMEDCT/255586005>;
+  puv:usesMethod <http://bioontology.org/ontologies/BiomedicalResourceOntology.owl#Fourier_Transform> .
+
+vocab:1006 a skos:Concept;
+  dct:created "2022-06-23"^^xsd:date;
+  dct:creator "0000-0001-6361-2571"@en;
+  dct:modified "2022-06-23"^^xsd:date;
+  dct:source <https://pubmed.ncbi.nlm.nih.gov/24360131/>;
+  skos:definition "Inter-trial coherence between various trials (epochs) across a measurement."@en;
+  skos:inScheme <http://purl.org/m4m21/variables>;
+  skos:prefLabel "inter-trial coherence"@en;
+  skos:topConceptOf <http://purl.org/m4m21/variables>;
+  puv:statistic <http://purl.bioontology.org/ontology/SNOMEDCT/255586005> .
